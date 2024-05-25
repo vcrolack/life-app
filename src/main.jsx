@@ -4,11 +4,15 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { LifeApp } from './LifeApp'
 import './styles.css'
+import { Provider } from 'react-redux'
+import { store } from './store'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <LifeApp />
-    </BrowserRouter>
+    <Provider store={ store }>
+      <BrowserRouter>
+        <LifeApp />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
 )
